@@ -4,9 +4,9 @@ class Bookmark < ApplicationRecord
   # before_destroy :prevent_destroy
   # attr_accessor :destroyed_by_parent
 
-  # validates :comment, presence: true, length: { minimum: 6 }
-  # validates :movie, :list, presence: true
-  # validates :movie_id, uniqueness: { scope: :question_id }
+  validates :comment, presence: true, length: { minimum: 6 }
+  validates :movie, :list, presence: true
+  validates :movie_id, uniqueness: { scope: :list_id }
 
   # private
 
