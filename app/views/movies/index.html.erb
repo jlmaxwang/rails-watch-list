@@ -1,0 +1,19 @@
+<%= render "nav" %>
+<h1>Movies</h1>
+<div class="container-lg container-md container-sm">
+<div class="container">
+<h2>What's for tonight?</h2>
+<%= render 'carousel' %>
+</div>
+<div class="container">
+<h2>Also see...</h2>
+<div class="list-group">
+  <% @movies.each do |movie| %>
+  <a href="<%= movie_path(movie) %>" class="list-group-item list-group-item-action" aria-current="true">
+    <%= movie.title %> -- <%= movie.rating %>
+  </a>
+<% end %>
+</div>
+</div>
+
+</div>

@@ -1,0 +1,17 @@
+
+<%# card %>
+<div class="card" style="width: 18rem;">
+  <img src="https://source.unsplash.com/random/?<%= @movie.title %>"  class="card-img-top" alt="movie poster">
+  <div class="card-body">
+    <h5 class="card-title"><%= @movie.title %></h5>
+    <p class="card-text"><%= @movie.overview %></p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Rating:<%= @movie.rating %></li>
+  </ul>
+  <div class="card-body">
+    <a href="#" class="card-link">Add to List</a>
+    <a href="#" class="card-link">Add to Bookmark</a>
+  </div>
+</div>
+<%# card %>
