@@ -1,0 +1,41 @@
+<%= render "nav_list" %>
+<hr>
+  <h1 class="mt-2">Lists</h1>
+<div class="container-lg container-md container-sm">
+  <div class="container">
+    <h2 class="mt-2">Here are your lists</h2>
+      <% @lists.each do |list| %>
+    <div class="row">
+      <div class="col">
+      <a href="<%= list_path(list) %>" class="list-group-item list-group-item-action" aria-current="true">
+      <%= list.name%>
+      </a>
+      </div>
+      <div class="col">
+      <%= link_to 'Delete', list_path(list), method: :delete, data:{ confirm: "Are you sure?"}, class: "btn btn-outline-danger"%>
+      </div>
+    </div>
+      <% end %>
+    <% if false%>
+    <% end %>
+    <%= link_to "Create a new list", new_list_path, class: "btn btn-primary mt-2"%>
+  </div>
+</div>
+
+<% if false %>
+<div class="container">
+  <div class="row align-items-start">
+      <% @lists.each do |list| %>
+      <h2 class="mt-2">Here are your lists</h2>
+    <div class="col">
+      <a href="<%= list_path(list) %>" class="list-group-item list-group-item-action" aria-current="true">
+        <p class="col"><%= list.name%></p></div>
+    <div class="col">
+      <%= link_to 'Delete', list_path(list), method: :delete, data:{ confirm: "Are you sure?"}, class: "btn btn-outline-danger col"%>
+    </div>
+    <div class="col">
+      <%= link_to "Create a new list", new_list_path, class: "btn btn-primary"%>
+      <% end %>
+    </div>
+  </div>
+<% end %>
